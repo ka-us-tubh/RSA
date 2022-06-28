@@ -30,7 +30,7 @@ def is_prime(x):
 
 
 if __name__ == "__main__":
-    # choose 2 distinct primes p & q
+   
     p = generate_prime()
     while True:
         q = generate_prime()
@@ -158,7 +158,7 @@ def decrypt(priv_key, c_text):
 message = input("What would you like decrypted>>>>")
 print("Your message is:", message)
 
-# Choose Encrypt or Decrypt and Print
+# Choose 2 for Decrypt and Print
 choose = input("Type '2' for decrytion.")
 if (choose == '2'):
     print("Your decrypted message is:", decrypt(private, message))
