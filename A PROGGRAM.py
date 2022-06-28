@@ -5,8 +5,6 @@ from random import randint
 import math
 
 # generate random prime function
-
-
 def generate_prime():
     x = randint(50, 999)
     while True:
@@ -17,8 +15,6 @@ def generate_prime():
     return x
 
 # primality check function
-
-
 def is_prime(x):
     i = 2
     root = math.ceil(math.sqrt(x))
@@ -41,28 +37,21 @@ if __name__ == "__main__":
 
 
 # RSA Modulus
-'''CALCULATION OF RSA MODULUS 'n'.'''
 n = p * q
 print("RSA Modulus(n) is:", n)
 
 # Eulers Toitent
-'''CALCULATION OF EULERS TOITENT 'r'.'''
 r = (p-1)*(q-1)
 print("Eulers Toitent(r) is:", r)
 print("--------------------------------------------------------------")
 
 # GCD
-'''CALCULATION OF GCD FOR 'e' CALCULATION.'''
-
-
 def egcd(e, r):
     while(r != 0):
         e, r = r, e % r
     return e
 
 # Euclid's Algorithm
-
-
 def eugcd(e, r):
     for i in range(1, r):
         while(e != 0):
@@ -73,8 +62,6 @@ def eugcd(e, r):
             e = b
 
 # Extended Euclidean Algorithm
-
-
 def eea(a, b):
     if(a % b == 0):
         return(b, 0, 1)
@@ -85,8 +72,6 @@ def eea(a, b):
         return(gcd, t, s)
 
 # Multiplicative Inverse
-
-
 def mult_inv(e, r):
     gcd, s, _ = eea(e, r)
     if(gcd != 1):
@@ -101,7 +86,6 @@ def mult_inv(e, r):
 
 
 # e Value Calculation
-'''FINDS THE HIGHEST POSSIBLE VALUE OF 'e' BETWEEN 1 and 1000 THAT MAKES (e,r) COPRIME.'''
 for i in range(1, randint(50,1000)):
     if(egcd(i, r) == 1):
         e = i
@@ -109,14 +93,11 @@ print("The value of e is:", e)
 print("------------------------------------------------------")
 
 # d, Private and Public Keys
-'''CALCULATION OF 'd', PRIVATE KEY, AND PUBLIC KEY.'''
 print("EUCLID'S ALGORITHM:")
 eugcd(e, r)
-print("END OF THE STEPS USED TO ACHIEVE EUCLID'S ALGORITHM.")
 print("------------------------------------------------------")
 print("EUCLID'S EXTENDED ALGORITHM:")
 d = mult_inv(e, r)
-print("END OF THE STEPS USED TO ACHIEVE THE VALUE OF 'd'.")
 print("The value of d is:", d)
 print("------------------------------------------------------")
 public = (e, n)
@@ -128,8 +109,6 @@ print("------------------------------------------------------")
 
 # Decryption
 '''DECRYPTION ALGORITHM'''
-
-
 def decrypt(priv_key, c_text):
     d, n = priv_key
     txt = c_text
@@ -153,8 +132,6 @@ def decrypt(priv_key, c_text):
 
     return x
 
-
-# Message
 message = input("What would you like decrypted>>>>")
 print("Your message is:", message)
 
