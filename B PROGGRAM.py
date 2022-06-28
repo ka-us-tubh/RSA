@@ -40,11 +40,10 @@ print("Your message is:", message)
 choose = input("enter 'go' for encryption>>>>> ")
 if(choose == 'go'):
     enc_msg = encrypt(public, message)
-    print("Your encrypted message is(copy this for decryption):", enc_msg)
-    print("Thank you for using,Goodbye!:):):)")
+    print("Your encrypted message is(copy this to A program for decryption):", enc_msg)
+    print("Thanks for using!:):):)")
 
 else:
-    print("oops some error occured")
     print("Try again and enter 'go'")
 
 
