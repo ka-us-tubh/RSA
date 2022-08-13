@@ -1,4 +1,4 @@
-# RSA encryption & decrpytion alogrithm:
+# RSA encryption & decryption alogrithm:
 <img src="rsa.png">
 <img src="how-rsa-works.png" >
 Here,I have tried to implement this algorithm using python.
